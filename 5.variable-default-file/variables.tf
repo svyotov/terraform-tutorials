@@ -1,15 +1,12 @@
 variable "region" {
   description = "AWS region to create resources"
-  default     = "us-east-1"
   type        = string
 }
 
 variable "tags" {
-  default = "terraform"
 }
 
 variable "instance_type" {
-  default = "t2.micro"
 }
 
 variable "amis" {

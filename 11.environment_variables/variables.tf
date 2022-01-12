@@ -1,7 +1,5 @@
 variable "region" {
-  description = "AWS region to create resources"
-  default     = "us-east-1"
-  type        = string
+
 }
 
 variable "tags" {

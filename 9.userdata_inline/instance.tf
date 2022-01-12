@@ -1,9 +1,7 @@
 resource "aws_instance" "ec2" {
-
-  ami = data.aws_ami.rhel.id
-
+  ami           = data.aws_ami.rhel.id
   instance_type = var.instance_type
-  key_name      = "aleti-london"
+  key_name      = "2019-aws-class"
   user_data     = <<-EOF
             		#!/bin/bash
                 sudo yum update
@@ -14,10 +12,6 @@ resource "aws_instance" "ec2" {
                 EOF
   tags = {
     Name = var.tags
-  }
-
-  provisioner "local-exec" {
-    command = " echo ${aws_instance.ec2.public_ip} >> inventory.txt"
   }
 }
 
@@ -35,6 +29,6 @@ data "aws_ami" "rhel" {
     values = ["hvm"]
   }
 
-  owners = ["309956199498"] # Canonical
+  owners = ["309956199498t"] # Canonical
 
 }

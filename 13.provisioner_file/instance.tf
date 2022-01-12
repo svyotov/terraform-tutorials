@@ -3,7 +3,7 @@ resource "aws_instance" "ec2" {
   ami = data.aws_ami.rhel.id
 
   instance_type = var.instance_type
-  key_name      = "aleti-london"
+  key_name      = "2019-aws-class"
   user_data     = <<-EOF
             		#!/bin/bash
                 sudo yum update
@@ -16,8 +16,22 @@ resource "aws_instance" "ec2" {
     Name = var.tags
   }
 
-  provisioner "local-exec" {
-    command = " echo ${aws_instance.ec2.public_ip} >> inventory.txt"
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    port        = 22
+    private_key = file("~/Downloads/2019-aws-class.pem.txt")
+    host        = aws_instance.ec2.public_ip
+  }
+
+  provisioner "file" {
+    source      = "scripts/userdata-nginx.sh"
+    destination = "/tmp/"
+  }
+
+  provisioner "file" {
+    content     = "public_ip: ${self.public_ip}"
+    destination = "/tmp/temp.log"
   }
 }
 
