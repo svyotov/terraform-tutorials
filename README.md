@@ -2,7 +2,7 @@
 
 This repository contains the tutorials for terraform
 
-1. You can get the terraform binary [here](https://www.terraform.io/downloads)
+1. You can get the terraform binary from [here](https://www.terraform.io/downloads) or [here](https://github.com/hashicorp/terraform/releases)
 
 ## Quick start
 
