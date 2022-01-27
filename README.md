@@ -1,8 +1,8 @@
 # terraform-tutorials
 
-This repository contains the tutorials for terraform v12
+This repository contains the tutorials for terraform
 
-1. Configure AWS CLI first to be able to execute these tutorials
+1. You can get the terraform binary [here](https://www.terraform.io/downloads)
 
 ## Quick start
 
