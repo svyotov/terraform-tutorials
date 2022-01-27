@@ -6,7 +6,7 @@ variable "region" {
 variable "tags" {
   description = "AWS tags for resource annotation"
   type        = map(string)
-  default     = "terraform"
+  default     = { "owner" : "terraform" }
 }
 
 variable "instance_type" {
