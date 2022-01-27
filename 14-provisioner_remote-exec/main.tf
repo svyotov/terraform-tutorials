@@ -4,7 +4,7 @@ resource "aws_instance" "ec2" {
 
   instance_type = var.instance_type
   key_name      = "2019-aws-class"
-  tags = var.tags
+  tags          = var.tags
 
   connection {
     type        = "ssh"

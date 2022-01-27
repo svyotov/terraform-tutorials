@@ -12,7 +12,7 @@ resource "aws_instance" "ec2" {
                 echo "<h1>Welcome to DevOps Classes, Keep Learning</h1>" | tee /usr/share/nginx/html/index.html
                 systemctl start nginx
                 EOF
-  tags = var.tags
+  tags          = var.tags
 
   provisioner "local-exec" {
     command = " echo ${aws_instance.ec2.public_ip} >> inventory.txt"

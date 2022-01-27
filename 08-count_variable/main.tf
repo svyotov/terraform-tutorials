@@ -2,7 +2,7 @@ resource "aws_instance" "ec2" {
   ami           = data.aws_ami.rhel.id
   instance_type = var.instance_type
   count         = 5
-  tags = var.tags
+  tags          = var.tags
 }
 
 data "aws_ami" "rhel" {

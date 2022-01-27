@@ -9,7 +9,7 @@ variable "tags" {
 
 variable "instance_type" {
   default = "t2.micro"
-  type        = string
+  type    = string
 }
 
 variable "amis" {
