@@ -3,9 +3,7 @@ resource "aws_instance" "ec2" {
   instance_type = var.instance_type
   key_name      = "2019-aws-class"
   user_data     = file("scripts/userdata-nginx.sh")
-  tags = {
-    Name = var.tags
-  }
+  tags = var.tags
 }
 
 data "aws_ami" "rhel" {

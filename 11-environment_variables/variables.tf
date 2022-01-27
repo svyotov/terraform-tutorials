@@ -3,11 +3,13 @@ variable "region" {
 }
 
 variable "tags" {
-  default = "terraform"
+  type    = map(string)
+  default = { "owner" : "terraform" }
 }
 
 variable "instance_type" {
   default = "t2.micro"
+  type        = string
 }
 
 variable "amis" {
